@@ -1,0 +1,31 @@
+SMART STOCK - COMO USAR
+=======================
+
+1) PRIMEIRA VEZ
+   - Instale o Node.js (nodejs.org, versao LTS).
+   - Abra a pasta do projeto e de dois cliques em  iniciar.bat
+     (ele instala tudo sozinho e liga o sistema).
+   - Pelo terminal, o equivalente e:  npm install   e depois   npm start
+
+2) USO DIARIO
+   - De dois cliques em iniciar.bat e abra  http://localhost:3000
+   - Escolha o OPERADOR no topo da pagina.
+   - Aproxime a tag do leitor: o sistema registra Retirada ou Devolucao.
+   - Para cadastrar uma ferramenta: Ferramentas > Nova ferramenta >
+     "Ler tag no leitor" e aproxime a tag. O UID e preenchido sozinho.
+
+3) ESTRUTURA (so 1 programa para ligar)
+   server.js          site + banco de dados + leitor RFID
+   public/index.html  interface do sistema
+   firmware/smart_stock_rfid/  firmware do ESP8266 (abrir na Arduino IDE e gravar)
+   testeserial.js     diagnostico da porta serial (opcional)
+   smartstock.db      banco de dados (criado automaticamente)
+
+   Nao sao mais necessarios: leitor.js, banco.js, historico.js
+
+4) PROBLEMAS COMUNS
+   - "Leitor desconectado" no topo: feche a Arduino IDE e o Monitor Serial,
+     confira o cabo USB e espere alguns segundos (reconecta sozinho).
+   - Porta errada: iniciar com  set RFID_PORTA=COM5  antes de  npm start.
+   - "Porta 3000 em uso": feche outro node ou use  set PORT=3001.
+   - "Tag nao cadastrada": cadastre a ferramenta pelo site.

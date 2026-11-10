@@ -1,0 +1,16 @@
+{
+  "name": "smart-stock",
+  "version": "2.0.0",
+  "description": "Controle de ferramentas com leitor RFID (ESP8266 + RC522)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "teste-serial": "node testeserial.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "serialport": "^12.0.0",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": { "node": ">=18" }
+}
